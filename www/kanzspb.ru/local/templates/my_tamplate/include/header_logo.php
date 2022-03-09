@@ -1,0 +1,1 @@
+<a class="navbar-brand mx-3 pt-1 " href="<?=SITE_DIR;?>"><img class="my-img-brand" src="<?=SITE_TEMPLATE_PATH;?>/images/logo CH_B2@2x.png" title="Brand" alt="Brand"></a>

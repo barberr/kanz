@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+
+var name1 = 1;
+function getdetails(name1 = 1){
+    var name = $('#name').val();
+    var rno = $('#rno').val();
+    $.ajax({
+        type: "POST",
+        url: "ajax-do.php",
+        data: {guid:name, id:rno}
+    }).done(function( result )
+        {
+            $("#msg").html( " GUID is " + result );
+			alert(result);
+        });
+}
+</script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Your Name:</td>
+            <td><input type="text" name="name" id="name" /><td>
+        </tr>
+<!--
+        <tr>
+            <td>Roll Number:</td>
+            <td><input type="text" name="rno" id="rno" /><td>
+        </tr>
+-->
+        <tr>
+            <td></td>
+            <td><input type="button" name="submit" id="submit" value="submit" onClick = "getdetails()" /></td>
+        </tr>
+    </table>
+    <div id="msg"></div>
+</body>
+</html>
